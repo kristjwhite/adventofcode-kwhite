@@ -1,28 +1,31 @@
-const inputData = require("../data/expense.json")
+const inputData = require("../data/expense.json");
 
-const expectedSum = 2020
+const expectedSum = 2020;
 
-console.log( "Table Size: ", inputData.length)
+const inputMock = inputData;
 
-let higherData = []
-let lowerData = []
-
-for(let expense of inputData) {
-    if(expense > (expectedSum/2)){
-        higherData.push(expense)
-        console.log("Value Higher: ", expense)
-    }else{
-        lowerData.push(expense)
-        console.log("Value Lower: ", expense)
+for (let i = 0; i < inputMock.length; i++) {
+  let secondValue = inputMock.slice(i + 1);
+  for (let n = 0; n < secondValue.length; n++) {
+    let thirdValue = secondValue.slice(n + 1);
+    for (let a = 0; a < thirdValue.length; a++) {
+      //   console.log("-----------------------------");
+      //   console.log("Loop Number", i, " = ", inputMock[i]);
+      //   console.log("First slice", i, " = ", secondValue[n]);
+      //   console.log("Second slice", i, " = ", thirdValue[a]);
+      if (inputMock[i] + secondValue[n] + thirdValue[a] == expectedSum) {
+        let answer = inputMock[i] * secondValue[n] * thirdValue[a];
+        console.log(
+          "Answer:",
+          inputMock[i],
+          " x ",
+          secondValue[n],
+          " x ",
+          thirdValue[a],
+          " = ",
+          answer
+        );
+      }
     }
-}
-
-for(let lowerExpense of lowerData){
-    for(let higherExpense of higherData){
-        if(lowerExpense+higherExpense == expectedSum){
-            let answer = lowerExpense*higherExpense
-            console.log("Answer:", lowerExpense, " x ", higherExpense, " = ", answer)
-        }
-
-    }
+  }
 }
