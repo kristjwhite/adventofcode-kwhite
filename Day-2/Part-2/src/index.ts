@@ -3,7 +3,7 @@ const fs = require("fs");
 const inputData = fs.readFileSync("./data/passwords.txt", `utf-8`);
 const separateLines = inputData.split(/\n/g);
 let counter: number = 0;
-for (let i = 0; i < separateLines.length - 1; i++) {
+for (let i = 0; i < separateLines.length-1 ; i++) {
   let newArray = separateLines[i].split(/\s/g);
 
   let ruleLimits: number[] = findLimits(newArray);
@@ -22,27 +22,27 @@ console.log("Valid Passwords: ", counter);
 function findLimits(line: string) {
   const rule: string = line[0];
   const subStrings = rule.split("-");
-  let lowerLimit: number = parseInt(subStrings[0]);
-  let upperLimit: number = parseInt(subStrings[1]);
-  return [lowerLimit, upperLimit];
+  let firstValue: number = parseInt(subStrings[0])-1;
+  let secondValue: number = parseInt(subStrings[1])-1;
+  return [firstValue, secondValue];
 }
 
 function findValidPasswords(
   password: string,
   letter: string,
-  lowerLimit: number,
-  upperLimit: number
+  firstNumber: number,
+  secondNumber: number
 ) {
-  let numberOfMatches = 0;
-  for (var i = 0; i < password.length; i++) {
-    let letterToCheck: string = password.charAt(i);
-    if (letterToCheck == letter) {
-      numberOfMatches++;
-    }
-  }
   let validPassword = false;
-  if (numberOfMatches >= lowerLimit && numberOfMatches <= upperLimit) {
-    validPassword = true;
+
+    let firstLetterCheck: boolean = (password.charAt(firstNumber) == letter);
+    let secondLetterCheck: boolean = (password.charAt(secondNumber) == letter);
+    // console.log("Letter is: ", letter)
+    // console.log("First Value: ", password.charAt(firstNumber), " is ", firstLetterCheck)
+    // console.log("Second Value: ", password.charAt(secondNumber), " is ", secondLetterCheck)
+    if (firstLetterCheck !== secondLetterCheck) {
+       validPassword = true;
   }
+
   return validPassword;
 }
