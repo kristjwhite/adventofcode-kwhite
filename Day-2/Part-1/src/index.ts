@@ -1,5 +1,4 @@
 const fs = require("fs");
-const csvToJson = require("convert-csv-to-json");
 
 const inputData = fs.readFileSync("./data/passwords.txt", `utf-8`);
 const separateLines = inputData.split(/\n/g);
@@ -20,6 +19,7 @@ for (let i = 0; i < separateLines.length - 1; i++) {
   }
 }
 console.log("Valid Passwords: ", counter);
+
 function findLimits(line: string) {
   const rule: string = line[0];
   const subStrings = rule.split("-");
@@ -47,5 +47,3 @@ function findValidPasswords(
   }
   return validPassword;
 }
-
-// console.log("Data: ", csvData)
