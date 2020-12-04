@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const inputData = fs.readFileSync("./data/input.txt", `utf-8`);
-
+//TODO: Move functions into own files adn write tests for them!
 interface Passport {
   ecl: string;
   pid: string;
