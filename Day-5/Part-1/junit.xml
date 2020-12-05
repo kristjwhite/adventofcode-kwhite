@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="9" failures="0" errors="0" time="1.826">
+  <testsuite name="Row Checker" errors="0" failures="0" skipped="0" timestamp="2020-12-05T11:56:37" time="1.749" tests="9">
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.002">
+    </testcase>
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.001">
+    </testcase>
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0">
+    </testcase>
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.023">
+    </testcase>
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.002">
+    </testcase>
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.002">
+    </testcase>
+    <testcase classname="Boarding Pass Calc should eval to the right row" name="Boarding Pass Calc should eval to the right row" time="0.001">
+    </testcase>
+    <testcase classname="Boarding Pass Calc should eval to the right row" name="Boarding Pass Calc should eval to the right row" time="0.002">
+    </testcase>
+    <testcase classname="Boarding Pass Calc should eval to the right row" name="Boarding Pass Calc should eval to the right row" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>
