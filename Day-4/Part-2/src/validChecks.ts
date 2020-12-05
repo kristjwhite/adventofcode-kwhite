@@ -27,17 +27,15 @@ export function isByrValid(val: string) {
     if (val.substring(0,1) == "#" &&
         val.length == 7 &&
         re.test(val.substring(1,7)) ) {
-      console.log("Valid HCL: ", val);
       return true;
     }
-    console.log("Invalid HCL: ", val);
     return false;
   }
 
   export function isEclValid(val: string) {
     let validColours = [`amb`, `blu`, `brn`, `gry`, `grn`, `hzl`, `oth`];
 
-    for (let i = 0; i < validColours.length - 1; i++) {
+    for (let i = 0; i < validColours.length; i++) {
       if (val == validColours[i]) {
         return true;
       }

@@ -64,3 +64,16 @@ describe('Hair Colour Checker', ()=>{
         expect(check).toBe(false)
     })
 })
+
+describe('Eye Colour Checker', ()=>{
+    const validEclData = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
+    const invalidEclData = ["190in", "#123abz", "123abc", "#1234567", "#12345", "red", "blue", "Grey" ]
+    it.each(validEclData)("should return true for valid Eye Colour: %s",async(testCase)=>{
+        const check = validChecks.isEclValid(testCase)
+        expect(check).toBe(true)
+    })
+    it.each(invalidEclData)('should return false for invalid Eye Colour: %s',async(testCase)=>{
+        const check = validChecks.isEclValid(testCase)
+        expect(check).toBe(false)
+    })
+})
