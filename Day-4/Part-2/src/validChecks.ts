@@ -11,24 +11,27 @@ export function isByrValid(val: string) {
   }
   export function isHgtValid(val: string) {
     if (val.slice(-2) == "cm") {
-        console.log("Centimeter Value", parseInt(val))
+
       return Number(parseInt(val)) >= 150 && Number(parseInt(val)) <= 193;
     }
     if (val.slice(-2) == "in") {
-        console.log("Inches Value", parseInt(val))
+
       return Number(parseInt(val)) >= 59 && Number(parseInt(val)) <= 76;
     }
-    console.log("Invalid type Value", val)
+
     return false;
   }
 
   export function isHclValid(val: string) {
-    if (val.search(`/#[0-9A-Fa-f]{6}/gi`) == -1) {
-      console.log("Invalid HCL: ", val);
-      return false;
+    var re = /[0-9A-Fa-f]{6}/g;
+    if (val.substring(0,1) == "#" &&
+        val.length == 7 &&
+        re.test(val.substring(1,7)) ) {
+      console.log("Valid HCL: ", val);
+      return true;
     }
-    console.log("Valid HCL: ", val);
-    return true;
+    console.log("Invalid HCL: ", val);
+    return false;
   }
 
   export function isEclValid(val: string) {

@@ -52,3 +52,15 @@ describe('Height Checker', ()=>{
     })
 })
 
+describe('Hair Colour Checker', ()=>{
+    const validHclData = ["#123abc", "#abcdef", "#123456", "#789012"]
+    const invalidHclData = ["190in", "#123abz", "123abc", "#1234567", "#12345" ]
+    it.each(validHclData)("should return true for valid Hair Colour: %s",async(testCase)=>{
+        const check = validChecks.isHclValid(testCase)
+        expect(check).toBe(true)
+    })
+    it.each(invalidHclData)('should return false for invalid Hair Colour: %s',async(testCase)=>{
+        const check = validChecks.isHclValid(testCase)
+        expect(check).toBe(false)
+    })
+})
