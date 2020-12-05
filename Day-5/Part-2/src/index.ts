@@ -1,21 +1,27 @@
-import { parse } from "path";
-import { rowCalc, colCalc } from "./positionCalcs";
+import { calculatePassIds } from "./positionCalcs";
 
 const fs = require("fs");
 
 const inputData = fs.readFileSync("./data/input.txt", `utf-8`);
 
-let separateData: string = inputData.split("\n");
+let separateData: string[] = inputData.split("\n");
 
-let highestPass = 0;
-for (let i = 0; i < separateData.length; i++) {
-  let row: number = rowCalc(separateData[i]);
-  let col: number = colCalc(separateData[i]);
+let allIds = calculatePassIds(separateData);
 
-  let passNumber: number = row * 8 + col;
+console.log("All values:", allIds);
 
-  if (passNumber >= highestPass) {
-    highestPass = passNumber;
+var sortedArray: number[] = allIds.sort((n1, n2) => n1 - n2);
+
+console.log("Sorted values:", sortedArray);
+
+let mySeat = findGap(sortedArray);
+
+console.log("My Seat", mySeat);
+function findGap(array: number[]) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i + 1] - array[i] == 2) {
+      let mid = (array[i + 1] + array[i]) / 2;
+      return mid;
+    }
   }
 }
-console.log("Top value:", highestPass);

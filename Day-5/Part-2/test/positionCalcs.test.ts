@@ -31,7 +31,8 @@ describe('Boarding Pass Calc', ()=>{
     const testData:any[] = [
         ["BFFFBBFRRR", 567],
         ["FFFBBBFRRR", 119],
-        ["BBFFBBFRLL", 820]
+        ["BBFFBBFRLL", 820],
+        ["FFFFFFFLLL", 8]
     ]
     it.each(testData)("should eval to the right row" ,(testData,correctAnswer)=>{
         let col = calcs.colCalc(testData)
