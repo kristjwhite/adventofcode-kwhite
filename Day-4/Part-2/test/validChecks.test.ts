@@ -77,3 +77,16 @@ describe('Eye Colour Checker', ()=>{
         expect(check).toBe(false)
     })
 })
+
+describe('PID Checker', ()=>{
+    const validPidData = ["000000001", "123456789", "112233445", "998877665"]
+    const invalidPidData = ["0123456789", "#123abz", "123abc", "#1234567", "#12345", "red", "blue", "Grey" ]
+    it.each(validPidData)("should return true for valid PID: %s",async(testCase)=>{
+        const check = validChecks.isPidValid(testCase)
+        expect(check).toBe(true)
+    })
+    it.each(invalidPidData)('should return false for invalid PID: %s',async(testCase)=>{
+        const check = validChecks.isPidValid(testCase)
+        expect(check).toBe(false)
+    })
+})

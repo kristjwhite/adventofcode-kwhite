@@ -44,9 +44,11 @@ export function isByrValid(val: string) {
   }
 
   export function isPidValid(val: string) {
-    if (val.search(`/{9}/g`) == -1 || !isNaN(+Number(val))) {
-      console.log("Invalid PID: ", val);
-      return false;
+    var re = /[0-9]{9}/g;
+    if (val.length == 9 &&re.test(val)) {
+      console.log("Valid PID: ", val);
+      return true;
     }
-    return true;
+    console.log("Invalid PID: ", val);
+    return false;
   }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="64" failures="0" errors="0" time="1.818">
-  <testsuite name="Birth Year Checker" errors="0" failures="0" skipped="0" timestamp="2020-12-05T10:16:06" time="1.757" tests="64">
+<testsuites name="jest tests" tests="76" failures="0" errors="0" time="2.005">
+  <testsuite name="Birth Year Checker" errors="0" failures="0" skipped="0" timestamp="2020-12-05T10:23:53" time="1.931" tests="76">
     <testcase classname="Birth Year Checker should return true for valid birth year 1980" name="Birth Year Checker should return true for valid birth year 1980" time="0.002">
     </testcase>
     <testcase classname="Birth Year Checker should return true for valid birth year 1989" name="Birth Year Checker should return true for valid birth year 1989" time="0">
@@ -15,7 +15,7 @@
     </testcase>
     <testcase classname="Birth Year Checker should return true for invalid birth year 1919" name="Birth Year Checker should return true for invalid birth year 1919" time="0">
     </testcase>
-    <testcase classname="Birth Year Checker should return true for invalid birth year 2004" name="Birth Year Checker should return true for invalid birth year 2004" time="0.001">
+    <testcase classname="Birth Year Checker should return true for invalid birth year 2004" name="Birth Year Checker should return true for invalid birth year 2004" time="0">
     </testcase>
     <testcase classname="Birth Year Checker should return true for invalid birth year 20abc" name="Birth Year Checker should return true for invalid birth year 20abc" time="0">
     </testcase>
@@ -33,9 +33,9 @@
     </testcase>
     <testcase classname="Issue Year Checker should return false for invalid issue year 2009" name="Issue Year Checker should return false for invalid issue year 2009" time="0">
     </testcase>
-    <testcase classname="Issue Year Checker should return false for invalid issue year 2021" name="Issue Year Checker should return false for invalid issue year 2021" time="0.001">
+    <testcase classname="Issue Year Checker should return false for invalid issue year 2021" name="Issue Year Checker should return false for invalid issue year 2021" time="0">
     </testcase>
-    <testcase classname="Issue Year Checker should return false for invalid issue year 20abc" name="Issue Year Checker should return false for invalid issue year 20abc" time="0">
+    <testcase classname="Issue Year Checker should return false for invalid issue year 20abc" name="Issue Year Checker should return false for invalid issue year 20abc" time="0.001">
     </testcase>
     <testcase classname="Expiration Year Checker should return true for valid expiration year 2020" name="Expiration Year Checker should return true for valid expiration year 2020" time="0">
     </testcase>
@@ -43,9 +43,9 @@
     </testcase>
     <testcase classname="Expiration Year Checker should return true for valid expiration year 2022" name="Expiration Year Checker should return true for valid expiration year 2022" time="0">
     </testcase>
-    <testcase classname="Expiration Year Checker should return true for valid expiration year 2021" name="Expiration Year Checker should return true for valid expiration year 2021" time="0.001">
+    <testcase classname="Expiration Year Checker should return true for valid expiration year 2021" name="Expiration Year Checker should return true for valid expiration year 2021" time="0">
     </testcase>
-    <testcase classname="Expiration Year Checker should return true for valid expiration year 2030" name="Expiration Year Checker should return true for valid expiration year 2030" time="0">
+    <testcase classname="Expiration Year Checker should return true for valid expiration year 2030" name="Expiration Year Checker should return true for valid expiration year 2030" time="0.001">
     </testcase>
     <testcase classname="Expiration Year Checker should return false for invalid expiration year 1919" name="Expiration Year Checker should return false for invalid expiration year 1919" time="0">
     </testcase>
@@ -53,13 +53,13 @@
     </testcase>
     <testcase classname="Expiration Year Checker should return false for invalid expiration year 2019" name="Expiration Year Checker should return false for invalid expiration year 2019" time="0">
     </testcase>
-    <testcase classname="Expiration Year Checker should return false for invalid expiration year 2031" name="Expiration Year Checker should return false for invalid expiration year 2031" time="0.001">
+    <testcase classname="Expiration Year Checker should return false for invalid expiration year 2031" name="Expiration Year Checker should return false for invalid expiration year 2031" time="0">
     </testcase>
-    <testcase classname="Expiration Year Checker should return false for invalid expiration year 20abc" name="Expiration Year Checker should return false for invalid expiration year 20abc" time="0">
+    <testcase classname="Expiration Year Checker should return false for invalid expiration year 20abc" name="Expiration Year Checker should return false for invalid expiration year 20abc" time="0.001">
     </testcase>
-    <testcase classname="Height Checker should return true for valid height: 60in" name="Height Checker should return true for valid height: 60in" time="0.001">
+    <testcase classname="Height Checker should return true for valid height: 60in" name="Height Checker should return true for valid height: 60in" time="0">
     </testcase>
-    <testcase classname="Height Checker should return true for valid height: 176cm" name="Height Checker should return true for valid height: 176cm" time="0">
+    <testcase classname="Height Checker should return true for valid height: 176cm" name="Height Checker should return true for valid height: 176cm" time="0.001">
     </testcase>
     <testcase classname="Height Checker should return true for valid height: 190cm" name="Height Checker should return true for valid height: 190cm" time="0">
     </testcase>
@@ -71,7 +71,7 @@
     </testcase>
     <testcase classname="Height Checker should return true for valid height: 76in" name="Height Checker should return true for valid height: 76in" time="0">
     </testcase>
-    <testcase classname="Height Checker should return false for invalid height: 190in" name="Height Checker should return false for invalid height: 190in" time="0">
+    <testcase classname="Height Checker should return false for invalid height: 190in" name="Height Checker should return false for invalid height: 190in" time="0.004">
     </testcase>
     <testcase classname="Height Checker should return false for invalid height: 150in" name="Height Checker should return false for invalid height: 150in" time="0">
     </testcase>
@@ -79,25 +79,25 @@
     </testcase>
     <testcase classname="Height Checker should return false for invalid height: 76cm" name="Height Checker should return false for invalid height: 76cm" time="0">
     </testcase>
-    <testcase classname="Height Checker should return false for invalid height: 20abc" name="Height Checker should return false for invalid height: 20abc" time="0.001">
+    <testcase classname="Height Checker should return false for invalid height: 20abc" name="Height Checker should return false for invalid height: 20abc" time="0">
     </testcase>
-    <testcase classname="Hair Colour Checker should return true for valid Hair Colour: #123abc" name="Hair Colour Checker should return true for valid Hair Colour: #123abc" time="0">
+    <testcase classname="Hair Colour Checker should return true for valid Hair Colour: #123abc" name="Hair Colour Checker should return true for valid Hair Colour: #123abc" time="0.001">
     </testcase>
     <testcase classname="Hair Colour Checker should return true for valid Hair Colour: #abcdef" name="Hair Colour Checker should return true for valid Hair Colour: #abcdef" time="0">
     </testcase>
     <testcase classname="Hair Colour Checker should return true for valid Hair Colour: #123456" name="Hair Colour Checker should return true for valid Hair Colour: #123456" time="0">
     </testcase>
-    <testcase classname="Hair Colour Checker should return true for valid Hair Colour: #789012" name="Hair Colour Checker should return true for valid Hair Colour: #789012" time="0.001">
+    <testcase classname="Hair Colour Checker should return true for valid Hair Colour: #789012" name="Hair Colour Checker should return true for valid Hair Colour: #789012" time="0">
     </testcase>
     <testcase classname="Hair Colour Checker should return false for invalid Hair Colour: 190in" name="Hair Colour Checker should return false for invalid Hair Colour: 190in" time="0">
     </testcase>
     <testcase classname="Hair Colour Checker should return false for invalid Hair Colour: #123abz" name="Hair Colour Checker should return false for invalid Hair Colour: #123abz" time="0">
     </testcase>
-    <testcase classname="Hair Colour Checker should return false for invalid Hair Colour: 123abc" name="Hair Colour Checker should return false for invalid Hair Colour: 123abc" time="0">
+    <testcase classname="Hair Colour Checker should return false for invalid Hair Colour: 123abc" name="Hair Colour Checker should return false for invalid Hair Colour: 123abc" time="0.001">
     </testcase>
     <testcase classname="Hair Colour Checker should return false for invalid Hair Colour: #1234567" name="Hair Colour Checker should return false for invalid Hair Colour: #1234567" time="0">
     </testcase>
-    <testcase classname="Hair Colour Checker should return false for invalid Hair Colour: #12345" name="Hair Colour Checker should return false for invalid Hair Colour: #12345" time="0.001">
+    <testcase classname="Hair Colour Checker should return false for invalid Hair Colour: #12345" name="Hair Colour Checker should return false for invalid Hair Colour: #12345" time="0">
     </testcase>
     <testcase classname="Eye Colour Checker should return true for valid Eye Colour: amb" name="Eye Colour Checker should return true for valid Eye Colour: amb" time="0">
     </testcase>
@@ -105,7 +105,7 @@
     </testcase>
     <testcase classname="Eye Colour Checker should return true for valid Eye Colour: brn" name="Eye Colour Checker should return true for valid Eye Colour: brn" time="0">
     </testcase>
-    <testcase classname="Eye Colour Checker should return true for valid Eye Colour: gry" name="Eye Colour Checker should return true for valid Eye Colour: gry" time="0.003">
+    <testcase classname="Eye Colour Checker should return true for valid Eye Colour: gry" name="Eye Colour Checker should return true for valid Eye Colour: gry" time="0.001">
     </testcase>
     <testcase classname="Eye Colour Checker should return true for valid Eye Colour: grn" name="Eye Colour Checker should return true for valid Eye Colour: grn" time="0">
     </testcase>
@@ -113,13 +113,13 @@
     </testcase>
     <testcase classname="Eye Colour Checker should return true for valid Eye Colour: oth" name="Eye Colour Checker should return true for valid Eye Colour: oth" time="0">
     </testcase>
-    <testcase classname="Eye Colour Checker should return false for invalid Eye Colour: 190in" name="Eye Colour Checker should return false for invalid Eye Colour: 190in" time="0.001">
+    <testcase classname="Eye Colour Checker should return false for invalid Eye Colour: 190in" name="Eye Colour Checker should return false for invalid Eye Colour: 190in" time="0">
     </testcase>
     <testcase classname="Eye Colour Checker should return false for invalid Eye Colour: #123abz" name="Eye Colour Checker should return false for invalid Eye Colour: #123abz" time="0">
     </testcase>
     <testcase classname="Eye Colour Checker should return false for invalid Eye Colour: 123abc" name="Eye Colour Checker should return false for invalid Eye Colour: 123abc" time="0">
     </testcase>
-    <testcase classname="Eye Colour Checker should return false for invalid Eye Colour: #1234567" name="Eye Colour Checker should return false for invalid Eye Colour: #1234567" time="0">
+    <testcase classname="Eye Colour Checker should return false for invalid Eye Colour: #1234567" name="Eye Colour Checker should return false for invalid Eye Colour: #1234567" time="0.001">
     </testcase>
     <testcase classname="Eye Colour Checker should return false for invalid Eye Colour: #12345" name="Eye Colour Checker should return false for invalid Eye Colour: #12345" time="0">
     </testcase>
@@ -127,7 +127,31 @@
     </testcase>
     <testcase classname="Eye Colour Checker should return false for invalid Eye Colour: blue" name="Eye Colour Checker should return false for invalid Eye Colour: blue" time="0">
     </testcase>
-    <testcase classname="Eye Colour Checker should return false for invalid Eye Colour: Grey" name="Eye Colour Checker should return false for invalid Eye Colour: Grey" time="0.001">
+    <testcase classname="Eye Colour Checker should return false for invalid Eye Colour: Grey" name="Eye Colour Checker should return false for invalid Eye Colour: Grey" time="0">
+    </testcase>
+    <testcase classname="PID Checker should return true for valid PID: 000000001" name="PID Checker should return true for valid PID: 000000001" time="0.021">
+    </testcase>
+    <testcase classname="PID Checker should return true for valid PID: 123456789" name="PID Checker should return true for valid PID: 123456789" time="0.001">
+    </testcase>
+    <testcase classname="PID Checker should return true for valid PID: 112233445" name="PID Checker should return true for valid PID: 112233445" time="0.001">
+    </testcase>
+    <testcase classname="PID Checker should return true for valid PID: 998877665" name="PID Checker should return true for valid PID: 998877665" time="0.001">
+    </testcase>
+    <testcase classname="PID Checker should return false for invalid PID: 0123456789" name="PID Checker should return false for invalid PID: 0123456789" time="0.001">
+    </testcase>
+    <testcase classname="PID Checker should return false for invalid PID: #123abz" name="PID Checker should return false for invalid PID: #123abz" time="0.001">
+    </testcase>
+    <testcase classname="PID Checker should return false for invalid PID: 123abc" name="PID Checker should return false for invalid PID: 123abc" time="0">
+    </testcase>
+    <testcase classname="PID Checker should return false for invalid PID: #1234567" name="PID Checker should return false for invalid PID: #1234567" time="0.001">
+    </testcase>
+    <testcase classname="PID Checker should return false for invalid PID: #12345" name="PID Checker should return false for invalid PID: #12345" time="0.001">
+    </testcase>
+    <testcase classname="PID Checker should return false for invalid PID: red" name="PID Checker should return false for invalid PID: red" time="0.001">
+    </testcase>
+    <testcase classname="PID Checker should return false for invalid PID: blue" name="PID Checker should return false for invalid PID: blue" time="0">
+    </testcase>
+    <testcase classname="PID Checker should return false for invalid PID: Grey" name="PID Checker should return false for invalid PID: Grey" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>
