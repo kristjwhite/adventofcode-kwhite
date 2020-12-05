@@ -2,6 +2,8 @@ import * as validChecks from "./validChecks"
 const fs = require("fs");
 
 const inputData = fs.readFileSync("./data/input.txt", `utf-8`);
+const validData = fs.readFileSync("./data/validData.txt", `utf-8`);
+const invalidData = fs.readFileSync("./data/invalidData.txt", `utf-8`);
 //TODO: Move functions into own files adn write tests for them!
 interface Passport {
   ecl: string;
@@ -18,19 +20,41 @@ let separateData: string = inputData.split("\n\n");
 let cleanedData: any = [];
 let jsonParsed: any = [];
 let validCounter: number = 0;
+let correctFormat: any = [];
 for (let i = 0; i < separateData.length - 1; i++) {
   cleanedData[i] = separateData[i].replace(/(\r\n|\n|\r)/gm, " ");
 
   jsonParsed = getJsonData(cleanedData[i]);
   let isValid = isPassport(jsonParsed);
   if (isValid == true) {
-    validCounter++;
+    correctFormat.push(jsonParsed)
   }
-  console.log("Valid Passport: ", isValid);
 }
-console.log("Total Valid = ", validCounter);
+for (let i = 0; i < correctFormat.length; i++) {
 
+  let isValid = isValidPassport(correctFormat[i]);
+  if (isValid == true) {
+    validCounter++
+  }
+  if (isValid == false){
+    console.log("Invalid Passport:", correctFormat[i])
+  }
+}
+console.log("Valid Passports:", validCounter)
 function isPassport(obj: any): obj is Passport {
+  return (
+      obj &&
+      typeof obj.ecl && typeof(obj.ecl) == 'string' &&
+      typeof obj.pid && typeof(obj.pid) == 'string' &&
+      typeof obj.eyr && typeof(obj.eyr) == 'string' &&
+      typeof obj.hcl && typeof(obj.hcl) == 'string' &&
+      typeof obj.byr && typeof(obj.byr) == 'string' &&
+      typeof obj.iyr && typeof(obj.iyr) == 'string' &&
+      typeof obj.hgt && typeof(obj.hgt) == 'string'
+  );
+}
+
+export function isValidPassport(obj: any): obj is Passport {
   return (
     obj &&
     typeof obj.ecl && validChecks.isEclValid(obj.ecl) &&
@@ -46,7 +70,7 @@ function isPassport(obj: any): obj is Passport {
 
 
 
-function getJsonData(query: string) {
+export function getJsonData(query: string) {
   let arrayOfKeyValues = query.split(/\s/g);
   let modifiedArray = new Array();
   for (let i = 0; i < arrayOfKeyValues.length; i++) {
