@@ -1,31 +1,37 @@
-# --- Day 2: Password Philosophy ---
-Your flight departs in a few days from the coastal airport; the easiest way down to the coast from here is via toboggan.
+--- Day 5: Binary Boarding ---
+You board your plane only to discover a new problem: you dropped your boarding pass! You aren't sure which seat is yours, and all of the flight attendants are busy with the flood of people that suddenly made it through passport control.
 
-The shopkeeper at the North Pole Toboggan Rental Shop is having a bad day. "Something's wrong with our computers; we can't log in!" You ask if you can take a look.
+You write a quick program to use your phone's camera to scan all of the nearby boarding passes (your puzzle input); perhaps you can find your seat through process of elimination.
 
-Their password database seems to be a little corrupted: some of the passwords wouldn't have been allowed by the Official Toboggan Corporate Policy that was in effect when they were chosen.
+Instead of zones or groups, this airline uses binary space partitioning to seat people. A seat might be specified like FBFBBFFRLR, where F means "front", B means "back", L means "left", and R means "right".
 
-To try to debug the problem, they have created a list (your puzzle input) of passwords (according to the corrupted database) and the corporate policy when that password was set.
+The first 7 characters will either be F or B; these specify exactly one of the 128 rows on the plane (numbered 0 through 127). Each letter tells you which half of a region the given seat is in. Start with the whole list of rows; the first letter indicates whether the seat is in the front (0 through 63) or the back (64 through 127). The next letter indicates which half of that region the seat is in, and so on until you're left with exactly one row.
 
-For example, suppose you have the following list:
+For example, consider just the first seven characters of FBFBBFFRLR:
 
-1-3 a: abcde
-1-3 b: cdefg
-2-9 c: ccccccccc
-Each line gives the password policy and then the password. The password policy indicates the lowest and highest number of times a given letter must appear for the password to be valid. For example, 1-3 a means that the password must contain a at least 1 time and at most 3 times.
+Start by considering the whole range, rows 0 through 127.
+F means to take the lower half, keeping rows 0 through 63.
+B means to take the upper half, keeping rows 32 through 63.
+F means to take the lower half, keeping rows 32 through 47.
+B means to take the upper half, keeping rows 40 through 47.
+B keeps rows 44 through 47.
+F keeps rows 44 through 45.
+The final F keeps the lower of the two, row 44.
+The last three characters will be either L or R; these specify exactly one of the 8 columns of seats on the plane (numbered 0 through 7). The same process as above proceeds again, this time with only three steps. L means to keep the lower half, while R means to keep the upper half.
 
-In the above example, 2 passwords are valid. The middle password, cdefg, is not; it contains no instances of b, but needs at least 1. The first and third passwords are valid: they contain one a or nine c, both within the limits of their respective policies.
+For example, consider just the last 3 characters of FBFBBFFRLR:
 
-How many passwords are valid according to their policies?
+Start by considering the whole range, columns 0 through 7.
+R means to take the upper half, keeping columns 4 through 7.
+L means to take the lower half, keeping columns 4 through 5.
+The final R keeps the upper of the two, column 5.
+So, decoding FBFBBFFRLR reveals that it is the seat at row 44, column 5.
 
+Every seat also has a unique seat ID: multiply the row by 8, then add the column. In this example, the seat has ID 44 * 8 + 5 = 357.
 
-## Approach
+Here are some other boarding passes:
 
-Turn the file into an array of data comprising of `[ "range letter password"]` then iterate through these individually
-
-For each iteration, use a split to determine the upper and lower values of the range
-
-Use IsChar to check each letter in the password and count how many instance there are
-
-Check if the counter is between the upper and lower limits, if true then add to a Valid Password counter.
-
+BFFFBBFRRR: row 70, column 7, seat ID 567.
+FFFBBBFRRR: row 14, column 7, seat ID 119.
+BBFFBBFRLL: row 102, column 4, seat ID 820.
+As a sanity check, look through your list of boarding passes. What is the highest seat ID on a boarding pass?
