@@ -1,27 +1,30 @@
-import { calculatePassIds } from "./positionCalcs";
-
 const fs = require("fs");
 
 const inputData = fs.readFileSync("./data/input.txt", `utf-8`);
 
-let separateData: string[] = inputData.split("\n");
+let separateGroups: string[] = inputData.split("\n\n");
+let sumAnswer = 0
 
-let allIds = calculatePassIds(separateData);
+console.log("Groups split: ", separateGroups[0])
 
-console.log("All values:", allIds);
+separateGroups.forEach((value,index) => {
+    separateGroups[index] = value.replace(/\n/g, "")
+});
+console.log("Cleaned Groups split: ", separateGroups[0])
 
-var sortedArray: number[] = allIds.sort((n1, n2) => n1 - n2);
+separateGroups.forEach((value,index) => {
 
-console.log("Sorted values:", sortedArray);
 
-let mySeat = findGap(sortedArray);
+ sumAnswer = sumAnswer + removeDuplicateCharacters(value).length
+});
 
-console.log("My Seat", mySeat);
-function findGap(array: number[]) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i + 1] - array[i] == 2) {
-      let mid = (array[i + 1] + array[i]) / 2;
-      return mid;
-    }
+console.log("Sum Total", sumAnswer)
+
+export function removeDuplicateCharacters(string: string) {
+    return string
+      .split('')
+      .filter(function(item, pos, self) {
+        return self.indexOf(item) == pos;
+      })
+      .join('');
   }
-}
