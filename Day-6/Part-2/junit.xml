@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="10" failures="1" errors="0" time="1.963">
+  <testsuite name="Row Checker" errors="0" failures="1" skipped="0" timestamp="2020-12-05T14:16:48" time="1.907" tests="10">
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.023">
+    </testcase>
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.001">
+    </testcase>
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.001">
+    </testcase>
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.001">
+    </testcase>
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.001">
+    </testcase>
+    <testcase classname="Row Checker should eval to the right row" name="Row Checker should eval to the right row" time="0.001">
+    </testcase>
+    <testcase classname="Boarding Pass Calc should eval to the right row" name="Boarding Pass Calc should eval to the right row" time="0.002">
+    </testcase>
+    <testcase classname="Boarding Pass Calc should eval to the right row" name="Boarding Pass Calc should eval to the right row" time="0.001">
+    </testcase>
+    <testcase classname="Boarding Pass Calc should eval to the right row" name="Boarding Pass Calc should eval to the right row" time="0.002">
+    </testcase>
+    <testcase classname="Boarding Pass Calc should eval to the right row" name="Boarding Pass Calc should eval to the right row" time="0.003">
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+Expected: 8
+Received: 16
+    at /Users/whitek24/porjects/adventofcode-kwhite/Day-5/Part-2/test/positionCalcs.test.ts:41:28
+    at Object.&lt;anonymous&gt; (/Users/whitek24/porjects/adventofcode-kwhite/Day-5/Part-2/node_modules/jest-each/build/bind.js:76:13)
+    at Object.asyncJestTest (/Users/whitek24/porjects/adventofcode-kwhite/Day-5/Part-2/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/whitek24/porjects/adventofcode-kwhite/Day-5/Part-2/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/whitek24/porjects/adventofcode-kwhite/Day-5/Part-2/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/whitek24/porjects/adventofcode-kwhite/Day-5/Part-2/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:93:5)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
