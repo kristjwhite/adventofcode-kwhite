@@ -1,43 +1,39 @@
-import * as calcs from '../src/positionCalcs'
+import * as func from '../src/function'
 
 
 
-describe('Row Checker', ()=>{
-    const testData:any[] = [
-        ["BFFFBBFRRR", 70],
-        ["FFFBBBFRRR", 14],
-        ["BBFFBBFRLL", 102]
-    ]
-    it.each(testData)("should eval to the right row" ,(testData,correctAnswer)=>{
-        const check = calcs.rowCalc(testData)
+describe('Check string contains', ()=>{
+    const testData:any[] = [["a","abc"] ,["b", "bcd"]]
+    it.each(testData)("should eval to true" ,(testLetter, testString)=>{
+        const check = func.containsLetter(testLetter,testString)
 
-        expect(check).toEqual(correctAnswer)
-    })
-})
-describe('Row Checker', ()=>{
-    const testData:any[] = [
-        ["BFFFBBFRRR", 7],
-        ["FFFBBBFRRR", 7],
-        ["BBFFBBFRLL", 4]
-    ]
-    it.each(testData)("should eval to the right row" ,(testData,correctAnswer)=>{
-        const check = calcs.colCalc(testData)
-
-        expect(check).toEqual(correctAnswer)
+        expect(check).toEqual(true)
     })
 })
 
-describe('Boarding Pass Calc', ()=>{
-    const testData:any[] = [
-        ["BFFFBBFRRR", 567],
-        ["FFFBBBFRRR", 119],
-        ["BBFFBBFRLL", 820],
-        ["FFFFFFFLLL", 8]
-    ]
-    it.each(testData)("should eval to the right row" ,(testData,correctAnswer)=>{
-        let col = calcs.colCalc(testData)
-        let row = calcs.rowCalc(testData)
-        let passNumber: number = (row * 8) + col;
-        expect(passNumber).toEqual(correctAnswer)
+describe('Check string does not contain', ()=>{
+    const testData:any[] = [["z","abc"] ,["a", "bcd"]]
+    it.each(testData)("should eval to false" ,(testLetter, testString)=>{
+        const check = func.containsLetter(testLetter,testString)
+
+        expect(check).toEqual(false)
+    })
+})
+
+describe('Check strings contain', ()=>{
+    const testData:any[] = ["a"]
+    it.each(testData)("should eval to true" ,(testLetter)=>{
+        const check = func.doAllStringsContain(testLetter,["abc" ,"bafs", "abcd"])
+
+        expect(check).toEqual(true)
+    })
+})
+
+describe('Check string do not contain', ()=>{
+    const testData:any[] = ["a"]
+    it.each(testData)("should eval to false" ,(testLetter)=>{
+        const check = func.doAllStringsContain(testLetter,["bcd","abc","dce"])
+
+        expect(check).toEqual(false)
     })
 })
