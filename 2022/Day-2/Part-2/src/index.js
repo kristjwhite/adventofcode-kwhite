@@ -2,74 +2,36 @@ const fs = require('fs');
 
 const inputData = fs.readFileSync('./data/data.txt', `utf-8`);
 const separateLines = inputData.split(/\n/g);
-// A = Rock
-// B = Paper
-// C = Scissors
-// X = Loss = 1
-// Y = Draw = 2
-// Z = Win = 3
 
-const calculateLoss = (sign) => {
-  let p = 0;
-  switch (sign) {
-    case 'A':
-      p += 3;
-      break;
-    case 'B':
-      p += 1;
-      break;
-    case 'C':
-      p += 2;
-      break;
-  }
-  return p;
+let loss = {
+  A: 3,
+  B: 1,
+  C: 2,
 };
-const calculateDraw = (sign) => {
-  let p = 0;
-  switch (sign) {
-    case 'A':
-      p += 1;
-      break;
-    case 'B':
-      p += 2;
-      break;
-    case 'C':
-      p += 3;
-      break;
-  }
-  return (p += 3);
-};
-const calculateWin = (sign) => {
-  let p = 0;
-  switch (sign) {
-    case 'A':
-      p += 2;
-      break;
-    case 'B':
-      p += 3;
-      break;
-    case 'C':
-      p += 1;
-      break;
-  }
 
-  return (p += 6);
+let draw = {
+  A: 1,
+  B: 2,
+  C: 3,
 };
+
+let win = {
+  A: 2,
+  B: 3,
+  C: 1,
+};
+
 const main = (data) => {
   let points = 0;
   for (let i in data) {
     const opponent = data[i].slice(0, 1);
     const result = data[i].slice(2, 3);
-
-    if (result == 'X') {
-      points += calculateLoss(opponent);
-    }
-    if (result == 'Y') {
-      points += calculateDraw(opponent);
-    }
-    if (result == 'Z') {
-      points += calculateWin(opponent);
-    }
+    let outcome = {
+      X: loss[opponent],
+      Y: draw[opponent] + 3,
+      Z: win[opponent] + 6,
+    };
+    points += outcome[result];
   }
   return points;
 };
